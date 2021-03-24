@@ -1,0 +1,41 @@
+.footer {
+    background-color: #fafafa;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-nav-products-element {
+    margin-bottom: 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.footer-nav-products-element:hover {
+    text-decoration: underline;
+}
+
+.footer-element-title {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.5)
+}
+
+.phone-text {
+    font-size: 20px;
+}
+
+.phone {
+    margin-bottom: 25px;
+}
+
+.sources {
+    display: flex;
+    max-width: 240px;
+    justify-content: space-between;
+}
+
+.footer-img {
+    width: 40px;
+}

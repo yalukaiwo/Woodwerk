@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woodwerk</title>
+    <link rel="icon" href="./image/svg/logo.png" sizes="192x192">
+    <link rel="apple-touch-icon-precomposed" href="./image/svg/logo.png" sizes="192x192">
+    <script src="https://kit.fontawesome.com/023721d3be.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com"> 
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./script/glider/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="./script/glider/dist/css/glide.theme.min.css">
+    <link rel="stylesheet" href="./style/mainStyle.css">
+    <link rel="stylesheet" href="./style/contentStyle.css">
+    <link rel="stylesheet" href="./style/headerStyle.css">
+    <link rel="stylesheet" href="./style/footerStyle.css">
+    <link rel="stylesheet" href="./style/sliderStyle.css">
+</head>
+<body>
+    <section class="modals">
+        <div class="blackbgreg">
+            <div class="register">
+                <div class="closeRegister">
+                    <img src="./image/svg/closeWindow.svg" alt="close" class="closeWindowButton">
+                </div>
+                <div class="imgbox">
+                    <img src="./image/svg/logo.svg" alt="woodwerk" class="register-logo">
+                </div>
+                <div class="choose-mode">
+                    <span data-mode="reg" class="register-mode log-reg">Регистрация</span>
+                    <div class="line"></div>
+                    <span data-mode="login" class="login-mode log-reg act">Логин</span>
+                </div>
+                <div class="log-container">
+                <div data-mode="reg" class="inputs register-container" style="display: none;">
+                <form>
+                    <input class="reg-input" name="name" required type="text" placeholder="Имя">
+                    <input class="reg-input" name="surname" required type="text" placeholder="Фамилия">
+                    <input class="reg-input" name="email" required type="email" placeholder="Почта">
+                    <p class="error-text" id="email-is-used">Почта уже используеться <span class="login-text-if-email-used">Войти в аккаунт</span></p>
+                    <p class="error-text" id="email-is-incorrect">Почта введена неверно</p>
+                    <input class="reg-input" name="password" required type="password" placeholder="Пароль">
+                    <input class="reg-input" name="passwordConf" required type="password" placeholder="Подтвердите пароль">
+                    <p class="error-text" id="error-pass-not-same-text">Пароли не совпадают</p>
+                    <label for="checkboxAccept" class="custom-checkbox accept-konf-check"> 
+                        <div class="custom-checkbox-view"><i class="fas fa-check"></i></div>
+                        <input type="checkbox" class="default-checkbox accept-konf-default" required id="checkboxAccept">
+                        <p class="accept-konfidence">Соглашаюсь с <a href="#" class="konf-link check-link">Условиями Конфиденциальности</a></p>
+                    </label>
+                    <p class="error-text conf-error" id="must-accept-conf">Согласитесь с условиями конфиденциальности</p>
+                    <input class="login-submit" id="submit-register" type="submit" value="Создать Аккаунт">
+                </form>
+                </div>
+                <div data-mode="login" class="inputs login-container" style="display: block;">
+                <form>
+                    <input class="login-input" name="email" required type="email" placeholder="Почта" id="login-mail-input">
+                    <input class="login-input" name="password" required type="password" placeholder="Пароль" id="login-pass-input">
+                    <p class="error-text" id="error-login-text">Неверная почта или пароль</p>
+                    <input class="login-submit" id="submit-login" type="submit" value="Войти">
+                </form>
+                </div>
+                </div>
+            </div>
+            <div class="opZeroZone"></div>
+        </div>
+        <div class="black-bg-product">
+            <div class="product-window">
+                <div class="product-header">
+                    <div class="closeProduct">
+                        <img src="./image/svg/closeWindow.svg" alt="close" class="closeWindowButtonProduct">
+                    </div>
+                    <div class="imgbox-product">
+                        <img src="./image/svg/logo.svg" alt="woodwerk" class="product-logo">
+                    </div>
+                </div>   
+                <div class="product-info-wrapper">
+                    <div class="product-images">
+                        <div class="images-product">
+                            <img src="#" data-number="image1" style="display: block;" class="product-page-img" alt="product-image">
+                            <img src="#" data-number="image2" style="display: none;" class="product-page-img" alt="product-image">
+                        </div>
+                        <div class="image-choise">
+                            <img src="#" data-number="image1" style="border: 2px solid black" alt="image-1" class="choose-image">
+                            <img src="#" data-number="image2" style="border: none;" alt="image-2" class="choose-image">
+                        </div>
+                    </div>
+                    <div class="product-main-info">
+                        <div class="info">
+                            <h2 class="product-page-name"></h2>
+                            <p class="product-page-size"></p>
+                            <p class="product-paragraph"></p>
+                            <div class="price-container">
+                                <p class="product-page-price"></p>
+                                <p class="product-page-price-not-actual" style="display: none;"></p>
+                            </div>
+                            <div class="cart-container">
+                                <button class="toCart"><i class="fas fa-cart-plus button-cart-image"></i>В Корзину</button>
+                                <div class="add-remove-cart" style="display: none;">
+                                    <div class="minus-button"><i class="fas fa-minus"></i></div>
+                                    <p class="count">1</p>
+                                    <div class="plus-button"><i class="fas fa-plus"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-secondary-info">
+                        <ul class="secondary-info-container">
+                            <li class="secondary-info-item">
+                                <h2 class="secondary-info-title">Тип</h2>
+                                <h3 class="secondary-info-subtitle type"></h3>
+                            </li>
+                            <li class="secondary-info-item">
+                                <h2 class="secondary-info-title">Материал</h2>
+                                <h3 class="secondary-info-subtitle material"></h3>
+                            </li>
+                            <li class="secondary-info-item">
+                                <h2 class="secondary-info-title">Ширина</h2>
+                                <h3 class="secondary-info-subtitle width"></h3>
+                            </li>
+                            <li class="secondary-info-item">
+                                <h2 class="secondary-info-title">Высота</h2>
+                                <h3 class="secondary-info-subtitle height"></h3>
+                            </li>
+                            <li class="secondary-info-item">
+                                <h2 class="secondary-info-title">Глубина</h2>
+                                <h3 class="secondary-info-subtitle depth"></h3>
+                            </li>
+                            <li class="secondary-info-item">
+                                <h2 class="secondary-info-title">Вес</h2>
+                                <h3 class="secondary-info-subtitle weight"></h3>
+                            </li>
+                            <li class="secondary-info-item">
+                                <h2 class="secondary-info-title">Страна Производства</h2>
+                                <h3 class="secondary-info-subtitle country"></h3>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="opZeroZone"></div>
+        </div>
+        <div class="blackbg-cart">
+            <div class="cart-window">
+                <div class="cart-header">
+                    <div class="cart-left-holder">
+                        <img src="./image/svg/bird_woodwerk.svg" alt="bird" class="cart-bird">
+                        <h2 class="cart-title">Корзина</h2>
+                    </div>
+                    <div class="closecart">
+                        <img src="./image/svg/closeWindow.svg" alt="">
+                    </div>
+                </div>
+                <div class="cart-body">
+                    <h2 class="empty-cart">Корзина Пуста</h2>
+                </div>
+                <div class="cart-footer">
+                    <p class="cart-final-price">Всего: <span class="final-sum-text"></span><span class="hrn-text hrn-two">грн</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <header class="header">
+        <div class="logo">
+            <img src="./image/svg/logo.svg" alt="logotype" class="logo-image">
+        </div>
+		<nav class="market-navigation">
+			<ul class="navigation-root">
+				<li class="navigation-element table-nav">Столы</li>
+				<li class="navigation-element bed-nav">Кровати</li>
+				<li class="navigation-element rack-nav">Стеллажи</li>
+                <li class="navigation-element chair-nav">Стулья</li>
+			</ul>
+		</nav>
+        <div class="burger-menu" id="burgerMenu">
+            <div class="burger-style-frame">
+                <div class="burger-style-top"></div>
+                <div class="burger-style-center"></div>
+                <div class="burger-style-bottom"></div>
+            </div>
+        </div>
+        <div class="blackbg">
+        <div class="burger-menu-content" id="burgerMenuContent">
+            <h2 class="main-menu-title">Меню</h2>
+            <div class="cart-section burger-element">
+                <p class="burger-menu-content-subtitle">Корзина</p>
+                <div class="burger-menu-content-element cart-nav">
+                    <img src="./image/svg/cart.svg" alt="cart" class="burger-menu-content-element-image">
+                    <h3 class="burger-menu-content-element-title">Корзина</h3>
+                </div>
+            </div>
+            <div class="account burger-element">
+                <p class="burger-menu-content-subtitle">Аккаунт</p>
+                <div class="burger-menu-content-element login-nav">
+                    <img src="./image/svg/user.svg" alt="cart" class="burger-menu-content-element-image">
+                    <h3 class="burger-menu-content-element-title">Войти</h3>
+                </div>
+            </div>
+            <div class="market-items burger-element">
+                <p class="burger-menu-content-subtitle">Товары</p>
+                <div class="burger-menu-content-element table-nav">
+                    <img src="./image/svg/table.svg" alt="cart" class="burger-menu-content-element-image">
+                    <h3 class="burger-menu-content-element-title">Столы</h3>
+                </div>
+                <div class="burger-menu-content-element bed-nav">
+                    <img src="./image/svg/bed.svg" alt="cart" class="burger-menu-content-element-image">
+                    <h3 class="burger-menu-content-element-title">Кровати</h3>
+                </div>
+                <div class="burger-menu-content-element rack-nav">
+                    <img src="./image/svg/dresser.svg" alt="cart" class="burger-menu-content-element-image">
+                    <h3 class="burger-menu-content-element-title">Стеллажи</h3>
+                </div>
+                <div class="burger-menu-content-element chair-nav">
+                    <img src="./image/svg/chair.svg" alt="cart" class="burger-menu-content-element-image">
+                    <h3 class="burger-menu-content-element-title">Стулья</h3>
+                </div>
+            </div>
+            <div class="reviews-n-partners burger-element">
+                <p class="burger-menu-content-subtitle">Отзывы и партнёры</p>
+                <a href="https://www.facebook.com/pg/woodwerk.ua/reviews/?ref=page_internal">
+                <div class="burger-menu-content-element review-nav">
+                    <img src="./image/svg/review.svg" alt="cart" class="burger-menu-content-element-image">
+                    <h3 class="burger-menu-content-element-title">Отзывы</h3>
+                </div>
+                </a>
+                <div class="burger-menu-content-element partners-nav">
+                    <img src="./image/svg/partner.svg" alt="cart" class="burger-menu-content-element-image">
+                    <h3 class="burger-menu-content-element-title">Партнёры</h3>
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="glider">
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                  <ul class="glide__slides">
+                    <li class="glide__slide"><img class="slider-content-image" src="./image/slider/slider-image-1.jpg" alt="slider-image-1"></li>
+                    <li class="glide__slide"><img class="slider-content-image" src="./image/slider/slider-image-2.jpg" alt="slider-image-2"></li>
+                  </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+        </div>      
+        <div class="partners-root">   
+        <h2 class="content-item-title">Наши партнёры</h2>
+        <div class="partners">
+            <div class="partner-image-box">
+                <img class="partner-image" src="./image/partners/alterhaus.png" alt="alterhaus">
+            </div>
+            <div class="partner-image-box">
+                <img class="partner-image" src="./image/partners/bud.png" alt="bud">
+            </div>
+            <div class="partner-image-box">
+                <img class="partner-image" src="./image/partners/ciklum.png" alt="ciklum">
+            </div>
+            <div class="partner-image-box">
+                <img class="partner-image" src="./image/partners/goodwine.png" alt="gw">
+            </div>
+            <div class="partner-image-box">
+                <img class="partner-image" src="./image/partners/hallmark.png" alt="hm">
+            </div>
+            <div class="partner-image-box">
+                <img class="partner-image" src="./image/partners/his.png" alt="his">
+            </div>
+            <div class="partner-image-box">
+                <img class="partner-image" src="./image/partners/klimenko.png" alt="km">
+            </div>
+            <div class="partner-image-box">
+                <img class="partner-image" src="./image/partners/kyivmiskbud.png" alt="kmb">
+            </div>
+            <div class="partner-image-box">
+                <img class="partner-image" src="./image/partners/prostir.png" alt="prostir">
+            </div>
+            <div class="partner-image-box">
+                <img class="partner-image" src="./image/partners/yunakov.png" alt="yn">
+            </div>
+        </div>
+        </div>   
+    </main>
+    <footer class="footer">
+        <nav class="footer-nav">
+            <h5 class="footer-element-title">Продукты</h5>
+            <ul class="footer-nav-products">
+                <li class="footer-nav-products-element table-nav">Столы</li>
+                <li class="footer-nav-products-element bed-nav">Кровати</li>
+                <li class="footer-nav-products-element rack-nav">Стеллажи</li>
+                <li class="footer-nav-products-element chair-nav">Стулья</li>
+            </ul>
+        </nav>
+        <nav class="footer-nav-help">
+            <h5 class="footer-element-title">Поддрежка</h5>
+            <ul class="footer-nav-products">
+                <li class="footer-nav-products-element contacts-nav">Контакты</li>
+                <li class="footer-nav-products-element review-nav"><a href="https://www.facebook.com/pg/woodwerk.ua/reviews/?ref=page_internal">Отзывы</a></li>
+                <li class="footer-nav-products-element partners-nav">Партнёры</li>
+            </ul>
+        </nav>
+        <div class="footer-misc">
+            <div class="phone">
+                <h5 class="footer-element-title">Телефон</h5>
+                <a class="phone-text" href="tel:+380676478085">+380 (67) 647 80 85</a>
+            </div>
+            <div class="contact-us">
+                <h5 class="footer-element-title">Медиа</h5>
+                <ul class="sources">
+                    <li class="source-element">
+                        <a href="https://www.instagram.com/woodwerk_ua/"><img src="./image/svg/instagram.svg" alt="insta" class="footer-img" title="instagram"></a>
+                    </li>
+                    <li class="source-element">
+                        <a href="https://www.facebook.com/woodwerk.ua"><img src="./image/svg/facebook.svg" alt="facebook" class="footer-img" title="facebook"></a>
+                    </li>
+                    <li class="source-element">
+                        <a href="https://www.pinterest.com/woodwerk_ua/"><img src="./image/svg/pinterest.svg" alt="pinterest" class="footer-img" title="pinterest"></a>
+                    </li>
+                    <li class="source-element">
+                        <a href="https://www.youtube.com/channel/UCuHPPob6eEFIn_70cFk5a3A"><img src="./image/svg/youtube.svg" alt="youtube" class="footer-img" title="youtube"></a>
+                    </li>                
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="./script/glider/dist/glide.min.js"></script>
+    <script src="./script/transitionRemove.js"></script>
+    <script type="module" src="./script/loginScript.js"></script>
+    <script src="./script/loginChecks.js"></script>
+    <script type="module" src="./script/cartScript.js"></script>
+    <script type="module" src="./script/burgerMenu.js"></script>
+    <script type="module" src="./script/marketGenerator.js"></script>
+    <script src="./script/productpageScript.js"></script>
+    <script type="module" src="./script/scrollScripts.js"></script>
+    <script src="./script/sliderScript.js"></script>
+</body>
+</html>
